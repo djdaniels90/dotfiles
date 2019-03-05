@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.3
+###  vlc 3.0.4
 ###
 
 ###
@@ -513,7 +513,7 @@
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.3 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.4 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -2483,7 +2483,7 @@ auhal-audio-device=0
 [subsdec] # Text subtitle decoder
 
 # Subtitle justification (integer)
-#subsdec-align=0
+#subsdec-align=-1
 
 # Subtitle text encoding (string)
 #subsdec-encoding=
@@ -2499,7 +2499,7 @@ auhal-audio-device=0
 [upnp] # Universal Plug'n'Play
 
 # SAT>IP channel list (string)
-#satip-channelist=ASTRA_19_2E
+#satip-channelist=auto
 
 # Custom SAT>IP channel list URL (string)
 #satip-channellist-url=
@@ -3051,7 +3051,7 @@ auhal-audio-device=0
 #freetype-fontsize=0
 
 # Relative font size (integer)
-#freetype-rel-fontsize=16
+#freetype-rel-fontsize=0
 
 # Text opacity (integer)
 #freetype-opacity=255

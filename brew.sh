@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 install_brew() {
 	which -s brew
 	if [[ $? != 0 ]] ; then
@@ -8,6 +9,7 @@ install_brew() {
 	fi
 	brew tap bramstein/webfonttools
 	brew tap caskroom/fonts
+	brew tap caskroom/versions
 	# Make sure we’re using the latest Homebrew.
 	brew update
 	brew upgrade
@@ -52,9 +54,9 @@ brew_install_encryption() {
 brew_install_bash4() {
 	brew install bash
 	brew install bash-completion2
-	if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-		echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-	fi;
+	# if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+	# 	echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+	# fi;
 }
 
 brew_install_zsh_env() {
@@ -64,9 +66,9 @@ brew_install_zsh_env() {
 	brew install zplug
 	brew install neofetch
 	# pip3 install virtualenv
-	if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-		echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-	fi;
+	# if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+	# 	echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+	# fi;
 }
 
 brew_install_terminals() {
@@ -274,8 +276,8 @@ brew_install_misc() {
 # brew install cairo
 
 # Remove outdated versions from the cellar.
-brew cleanup
+# brew cleanup
 
-echo "******************** COMPLETED BREW INSTALLATION ********************"
-echo "add `/usr/local/bin/bash` to `/etc/shells`"
-echo "add `/usr/local/bin/zsh` to `/etc/shells`"
+# echo "******************** COMPLETED BREW INSTALLATION ********************"
+# echo "add `/usr/local/bin/bash` to `/etc/shells`"
+# echo "add `/usr/local/bin/zsh` to `/etc/shells`"

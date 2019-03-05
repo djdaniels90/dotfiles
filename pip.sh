@@ -4,10 +4,10 @@
 # install_code_analysis
 # install_data_analysis
 
-function py_install_env {
-	# brew install python3
-	# pip3 install virtualenv
-}
+# function py_install_env {
+# 	# brew install python3
+# 	# pip3 install virtualenv
+# }
 
 function py_code_analysis {
 	pip3 install codeintel

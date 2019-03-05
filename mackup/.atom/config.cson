@@ -10,10 +10,12 @@
     behaviour:
       alternativeIcon: "atom-5"
     privacy: {}
+  "atom-discord-custom":
+    behaviour: {}
   "atom-python-run":
     consoleLog: false
   "atom-ternjs":
-    guess: false
+    guess: true
     inlineFnCompletion: false
     inlineFnCompletionDocumentation: true
     useSnippets: true
@@ -21,28 +23,40 @@
     includeCompletionsFromAllBuffers: true
   "autocomplete-modules":
     babelPluginModuleResolver: true
-    webpackConfigFilename: "./tools/webpack.config.js"
   "autocomplete-paths":
     enableHtmlSupport: true
     suggestionPriority: 3
-  "autocomplete-plus":
-    enableBuiltinProvider: false
-    includeCompletionsFromAllBuffers: false
+  "autocomplete-plus": {}
   "autocomplete-python":
     useKite: false
   "color-picker":
     automaticReplace: true
     preferredFormat: "HEX"
   core:
+    closeDeletedFileTabs: true
+    customFileTypes:
+      "source.ini": [
+        ".hgrc"
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "language-javascript"
       "atom-ide-ui"
       "linter-pyflakes"
-      "linter-flow"
-      "flow-ide"
       "linter-sass-lint"
       "terminal-plus"
       "pane-layout-plus"
+      "smart-tab-name"
+      "tree-view"
+      "image-view"
+      "autocomplete-webpack"
     ]
     projectHome: "/Users/panda/code"
     telemetryConsent: "limited"
@@ -51,8 +65,11 @@
       "seti-syntax"
     ]
     titleBar: "custom"
+    useTreeSitterParsers: false
     warnOnLargeFileLimit: 10
   editor:
+    fontFamily: "HackNerdFontComplete-Bold"
+    fontSize: 12
     preferredLineLength: 120
   "exception-reporting":
     userId: "d02bacd7-9c5e-41a3-aad3-5c09757c194a"
@@ -60,17 +77,21 @@
     $caseSensitive: true
   filesize:
     UseDecimal: true
-  "flow-ide": {}
+  "flow-ide":
+    executablePath: "/usr/local/bin/flow"
   fonts:
     fontFamily: "Hack"
   "git-blame":
     columnWidth: 340
   "js-hyperclick":
     jumpToImport: true
+  "lcov-info": {}
   linter:
     lintOnChangeInterval: 10000
+  "linter-eslint":
+    autofix:
+      fixOnSave: true
   "linter-flake8":
-    executablePath: "$PROJECT/.venv/bin/flake8"
     maxLineLength: 120
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
@@ -91,17 +112,101 @@
   "remote-ftp":
     connector:
       autoUploadOnSave: "only when connected"
+      sshConfigPath: "~/.ssh/known_hosts"
+    dev:
+      debugResponse: true
+    statusbar:
+      enable: true
+      position: "right"
+  "save-workspace-Workspaces":
+    "Analysis v4":
+      panes: [
+        {
+          data: [
+            {
+              data:
+                orientation: "vertical"
+                tabs: [
+                  "/Users/panda/code/amp/pandas4000/src/routes/analysis/index.js"
+                  "/Users/panda/code/amp/pandas4000/src/routes/analysis/Analysis.js"
+                  "/Users/panda/code/amp/pandas4000/src/data/models/Dimension/class.js"
+                  "/Users/panda/code/amp/pandas4000/src/routes/analysis/components/index.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/helpers.js"
+                  "/Users/panda/code/amp/pandas4000/src/components/AmpTable/AmpTable.js"
+                ]
+              type: "pane"
+            }
+            {
+              data:
+                orientation: "vertical"
+                tabs: [
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/table/actions.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/dates/actions.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/thunks/LoadSavedView.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/index.js"
+                ]
+              type: "pane"
+            }
+          ]
+          orientation: "vertical"
+          type: "paneAxis"
+        }
+        {
+          data: [
+            {
+              data:
+                orientation: "vertical"
+                tabs: [
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/dates/reducers.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/dimensions/reducers.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/table/reducers.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/refresh/index.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/reducers.js"
+                ]
+              type: "pane"
+            }
+            {
+              data:
+                orientation: "vertical"
+                tabs: [
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/table/selectors.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/dimensions/selectors.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/refresh/selectors.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/dates/selectors.js"
+                  "/Users/panda/code/amp/pandas4000/src/store/analysis/selectors.js"
+                ]
+              type: "pane"
+            }
+          ]
+          orientation: "vertical"
+          type: "paneAxis"
+        }
+      ]
+      projectPaths: [
+        "/Users/panda/code/amp/pandas4000"
+      ]
   script: {}
   "seti-syntax":
     dynamicColor: false
   "seti-ui":
     compactView: true
     disableAnimations: true
+    hideProjectTab: true
+    hideTitleBar: true
     themeColor: "Green"
+  "smart-tab-name":
+    debug: 1
   "sync-settings":
-    _lastBackupHash: "2bbc99525dacb87ce87feb8242b4797cbe4606ce"
+    _lastBackupHash: "d6c8352ed4fe98899311a8f1459e24f18c2d1709"
+    blacklistedKeys: [
+      "'atom-beautify.general._analyticsUserId'"
+      "'sync-settings.personalAccessToken'"
+    ]
     gistId: "a1ca80026b6f0c19f31ea97104de6a6f"
-    personalAccessToken: ""
+    personalAccessToken: "3ce6441eb6bcb40a9110f4368cd6325494a327bf"
+  "tester-jest":
+    binaryPath: "yarn test"
+    nodeEnv: "development"
   "todo-show": {}
   welcome:
     showOnStartup: false
@@ -109,3 +214,6 @@
 ".breakpoints.hydrogen":
   editor:
     autoIndentOnPaste: false
+".reason.source":
+  editor:
+    preferredLineLength: 110

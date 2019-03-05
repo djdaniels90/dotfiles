@@ -23,7 +23,7 @@ brew_install_terminals
 brew_install_font_tools
 
 # Will run the mac setup scripts
-source ./macos
+# source ./macos
 
 brew_install_db
 brew_install_ctf_tools

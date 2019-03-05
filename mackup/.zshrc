@@ -1,11 +1,9 @@
 DEFAULT_USER=$USER
 
 export PATH="/usr/local/sbin:$PATH"
-
-export ZPLUG_HOME=/usr/local/opt/zplug
 export PYENV_ROOT="$HOME/.pyenv"
-
-eval $(docker-machine env) &
+export PATH="$PYENV_ROOT/bin:$PATH"
+export ZPLUG_HOME=/usr/local/opt/zplug
 
 source $ZPLUG_HOME/init.zsh
 # We want bash specific ones overwritten
@@ -18,27 +16,12 @@ ulimit -n 21504
 ulimit -c 2000
 ulimit -s 10000
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
-setopt appendhistory autocd extendedglob notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-
-export PIPENV_VENV_IN_PROJECT=1
+# export PIPENV_VENV_IN_PROJECT=1
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:3
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "rupa/z", use:z.sh
 zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
@@ -48,6 +31,8 @@ zplug "zsh-users/zsh-autosuggestions"
 # https://github.com/zsh-users/zsh-completions requires brew
 zplug "zsh-users/zsh-completions"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
+zplug "rupa/z", use:z.sh
+# zplug "knu/z", use:z.sh
 
 unalias run-help
 autoload run-help
@@ -66,9 +51,11 @@ if [ $commands[kubectl] ]; then
 	zplug "plugins/kubectl", from:oh-my-zsh
 fi
 
+zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 # zplug "plugins/pip", from:oh-my-zsh
 # [ -z "${PIPENV_ACTIVE}" ] && {
-#     zplug "plugins/virtualenvwrapper", from:oh-my-zsh
+#
+# 		# eval "$(pipenv --completion)"
 # }
 zplug "tysonwolker/iterm-tab-colors"
 
@@ -93,6 +80,20 @@ zplug "HaleTom/89ffe32783f89f403bba96bd7bcd1263", \
 
 zplug "iam4x/zsh-iterm-touchbar"
 
+# The following lines were added by compinstall
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=5000
+setopt appendhistory autocd extendedglob notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
 #######################
 # THEME Configuration #
 #######################
@@ -116,11 +117,17 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-#   # source $(pyenv root)/completions/pyenv.zsh
-#   pyenv rehash
-# fi
+if command -v pyenv 1>/dev/null 2>&1; then
+	echo 'pyenv found using it'
+  eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+  # source $(pyenv root)/completions/pyenv.zsh
+  pyenv rehash
+fi
 
+docker-link &
 # Show splash screen
 neofetch
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
