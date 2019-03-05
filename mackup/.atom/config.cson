@@ -57,6 +57,7 @@
       "tree-view"
       "image-view"
       "autocomplete-webpack"
+      "linter-codeclimate"
     ]
     projectHome: "/Users/panda/code"
     telemetryConsent: "limited"
@@ -88,6 +89,8 @@
   "lcov-info": {}
   linter:
     lintOnChangeInterval: 10000
+  "linter-codeclimate":
+    disableTimeout: true
   "linter-eslint":
     autofix:
       fixOnSave: true
@@ -101,7 +104,6 @@
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     panelHeight: 209
-    showPanel: true
     showProviderName: true
     statusBarRepresents: "Current File"
   "markdown-writer":
@@ -196,6 +198,16 @@
     themeColor: "Green"
   "smart-tab-name":
     debug: 1
+  "spell-check":
+    addKnownWords: true
+    grammars: [
+      "comment.block.documentation.js"
+      "comment.line.double-slash.js"
+      "comment."
+    ]
+    locales: [
+      "en-US"
+    ]
   "sync-settings":
     _lastBackupHash: "d6c8352ed4fe98899311a8f1459e24f18c2d1709"
     blacklistedKeys: [
@@ -205,7 +217,7 @@
     gistId: "a1ca80026b6f0c19f31ea97104de6a6f"
     personalAccessToken: "3ce6441eb6bcb40a9110f4368cd6325494a327bf"
   "tester-jest":
-    binaryPath: "yarn test"
+    binaryPath: "npm spec"
     nodeEnv: "development"
   "todo-show": {}
   welcome:

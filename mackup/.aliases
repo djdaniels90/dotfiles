@@ -24,6 +24,8 @@ else # macOS `ls`
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
+alias chrome-insecure="open -a Google\ Chrome --args --disable-web-security --allow-running-insecure-content"
+
 alias k8="kubectl "
 alias mk8="minikube "
 
