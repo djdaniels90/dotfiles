@@ -1,0 +1,6 @@
+[submodule "iTerm2-Color-Schemes"]
+	path = iTerm2-Color-Schemes
+	url = git@github.com:mbadolato/iTerm2-Color-Schemes.git
+[submodule "nerd-fonts"]
+	path = nerd-fonts
+	url = git@github.com:ryanoasis/nerd-fonts.git
