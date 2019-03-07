@@ -70,7 +70,7 @@
     warnOnLargeFileLimit: 10
   editor:
     fontFamily: "HackNerdFontComplete-Bold"
-    fontSize: 12
+    fontSize: 13
     preferredLineLength: 120
   "exception-reporting":
     userId: "d02bacd7-9c5e-41a3-aad3-5c09757c194a"
