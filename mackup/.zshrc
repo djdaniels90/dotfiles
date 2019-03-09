@@ -4,12 +4,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export ZPLUG_HOME=/usr/local/opt/zplug
-echo test1
 source $ZPLUG_HOME/init.zsh
 # We want bash specific ones overwritten
-# source ~/.exports
-# source ~/.functions
-# source ~/.aliases
+source ~/.exports
+source ~/.functions
+source ~/.aliases
 
 ulimit -n 21504
 # ulimit -u 2000
@@ -17,7 +16,6 @@ ulimit -c 2000
 ulimit -s 10000
 
 # export PIPENV_VENV_IN_PROJECT=1
-echo test2
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -33,7 +31,6 @@ zplug "zsh-users/zsh-completions"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "rupa/z", use:z.sh
 # zplug "knu/z", use:z.sh
-echo test4
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
@@ -50,7 +47,6 @@ zplug "paulmelnikow/zsh-startup-timer"
 if [ $commands[kubectl] ]; then
 	zplug "plugins/kubectl", from:oh-my-zsh
 fi
-echo test4
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 # zplug "plugins/pip", from:oh-my-zsh
 # [ -z "${PIPENV_ACTIVE}" ] && {

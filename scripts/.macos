@@ -661,9 +661,7 @@ defaults write com.apple.terminal SecureKeyboardEntry -bool true
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the Argonaut Dark theme for iTerm
-
-# TODO: FIX ME- this wont work with the new deployment
-open "${HOME}/dotfiles/init/Argonaut.itermcolors"
+open "${HOME}/dotfiles/assets/iTerm2-Color-Schemes/schemes/Argonaut.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -823,14 +821,6 @@ defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2
 
 # Install Sublime Text settings
 # cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
-
-###############################################################################
-# Spectacle.app                                                               #
-###############################################################################
-
-# Set up my preferred keyboard shortcuts
-# TODO: fix any possible pathing issues with new deployment
-cp -r ./init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #
