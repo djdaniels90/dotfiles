@@ -5,8 +5,7 @@
     languageMappings: "{\"Babel ES6 Javascript\": \"javascript\" }"
     startDir: "dirOfFile"
   "atom-beautify":
-    bash:
-      beautify_on_save: true
+    bash: {}
     css:
       beautify_on_save: true
       default_beautifier: "Prettier"
@@ -48,8 +47,8 @@
       optionIsMeta: true
   "atom-material-ui":
     colors:
-      abaseColor: "#5c6bc0"
-      accentColor: "#ff0c14"
+      abaseColor: "#941751"
+      accentColor: "#07be69"
       genAccent: true
       paintCursor: true
       predefinedColor: "Indigo"
@@ -110,10 +109,8 @@
       "language-javascript"
       "linter-pyflakes"
       "linter-sass-lint"
-      "terminal-plus"
       "pane-layout-plus"
       "smart-tab-name"
-      "image-view"
       "autocomplete-webpack"
       "linter-codeclimate"
       "whitespace"
@@ -138,7 +135,7 @@
     outerScope: true
   editor:
     fontFamily: "HackNerdFontComplete-Bold"
-    fontSize: 11
+    fontSize: 12
     preferredLineLength: 120
     tabLength: 4
   "exception-reporting":
@@ -206,6 +203,7 @@
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     panelHeight: 210
+    showPanel: true
     showProviderName: true
     statusBarRepresents: "Current File"
   "markdown-writer":
@@ -342,12 +340,13 @@
     gistId: "a1ca80026b6f0c19f31ea97104de6a6f"
     personalAccessToken: "3ce6441eb6bcb40a9110f4368cd6325494a327bf"
   tabs: {}
+  "terminal-plus":
+    core: {}
   "tester-jest":
     binaryPath: "npm spec"
     nodeEnv: "development"
   "todo-show": {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "tree-view-git-status":
     gitFlow:
       enabled: false
