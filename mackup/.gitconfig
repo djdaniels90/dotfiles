@@ -184,3 +184,5 @@
 	trustExitCode = true
 [mergetool "kdiff3"]
 	keepTemporaries = false
+[status]
+	submoduleSummary = true
