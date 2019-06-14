@@ -114,7 +114,6 @@
       "autocomplete-webpack"
       "linter-codeclimate"
       "whitespace"
-      "sync-settings"
       "package-sync"
       "tree-view-scope-lines"
       "atom-ctags"
@@ -332,13 +331,22 @@
     AutoscrollFromSource: true
     DoubleClickToFoldTreeView: false
   "sync-settings":
-    _lastBackupHash: "d6c8352ed4fe98899311a8f1459e24f18c2d1709"
+    _lastBackupHash: "31b3748286557e2ea21c856a15e8728d80416a58"
     blacklistedKeys: [
       "'atom-beautify.general._analyticsUserId'"
       "'sync-settings.personalAccessToken'"
     ]
-    gistId: "a1ca80026b6f0c19f31ea97104de6a6f"
-    personalAccessToken: "3ce6441eb6bcb40a9110f4368cd6325494a327bf"
+    extraFiles: [
+      "projects.cson"
+      "color-tabs.cson"
+      ".ftpconfig"
+      "packages.cson"
+      "toolbar.cson"
+      "github.cson"
+      "kite-config.json"
+    ]
+    gistId: "dd04641f45177afc3ae359c96b249a42"
+    personalAccessToken: "31356108dc864905c16140cd83d2520a9cbcab54"
   tabs: {}
   "terminal-plus":
     core: {}
