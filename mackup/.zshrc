@@ -4,6 +4,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -141,4 +142,4 @@ docker-link &
 neofetch
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
