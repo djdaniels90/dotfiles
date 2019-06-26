@@ -1,24 +1,74 @@
 "*":
   Hydrogen:
     debug: true
+    kernelNotifications: true
     languageMappings: "{\"Babel ES6 Javascript\": \"javascript\" }"
     startDir: "dirOfFile"
   "atom-beautify":
+    bash: {}
+    css:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
     general:
       _analyticsUserId: "114fd150-bb67-4415-b5e1-3055e4955b58"
+      beautifyEntireFileOnSave: false
+      loggerLevel: "info"
+    java:
+      configPath: "uncrustify.cfg"
+    js:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    json:
+      default_beautifier: "Prettier"
+    python:
+      default_beautifier: "yapf"
+      formatter: "yapf"
+      max_line_length: 120
+      multi_line_output: "Vertical"
+      sort_imports: true
+    scss:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    cmdArgs: "--exclude=.circleci --exclude=conf.js --exclude=*mock* --exclude=node_modules --exclude=flow-types --exclude=jest-stare --exclude=build --exclude=coverage --exclude=package.json"
+    disableComplete: true
   "atom-discord":
     behaviour:
       alternativeIcon: "atom-5"
     privacy: {}
   "atom-discord-custom":
-    behaviour: {}
+    behaviour:
+      alternativeIcon: "atom-5"
+  "atom-ide-ui":
+    "atom-ide-outline-view": {}
+    "atom-ide-terminal":
+      fontFamily: "HackNerdFontComplete-Regular"
+      optionIsMeta: true
+  "atom-material-ui":
+    colors:
+      abaseColor: "#941751"
+      accentColor: "#07be69"
+      genAccent: true
+      paintCursor: true
+      predefinedColor: "Indigo"
+    fonts:
+      fontSize: 15
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    ui:
+      panelContrast: true
+      panelShadows: true
   "atom-python-run":
     consoleLog: false
   "atom-ternjs":
+    excludeLowerPriorityProviders: true
     guess: true
-    inlineFnCompletion: false
     inlineFnCompletionDocumentation: true
+    ternServerGetFileAsync: false
     useSnippets: true
+    useSnippetsAndFunction: true
   autocomplete:
     includeCompletionsFromAllBuffers: true
   "autocomplete-modules":
@@ -26,13 +76,22 @@
   "autocomplete-paths":
     enableHtmlSupport: true
     suggestionPriority: 3
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    includeCompletionsFromAllBuffers: false
+    similarSuggestionRemoval: "textOrSnippet"
+    useAlternateScoring: false
   "autocomplete-python":
-    useKite: false
+    extraPaths: "$PROJECT"
+    pythonPaths: "~/.pyenv/shims/python"
+    useSnippets: "required"
+  "code-peek":
+    codePeekLocation: "Modal"
   "color-picker":
     automaticReplace: true
     preferredFormat: "HEX"
   core:
+    audioBeep: false
     closeDeletedFileTabs: true
     customFileTypes:
       "source.ini": [
@@ -48,69 +107,126 @@
       ]
     disabledPackages: [
       "language-javascript"
-      "atom-ide-ui"
       "linter-pyflakes"
       "linter-sass-lint"
-      "terminal-plus"
       "pane-layout-plus"
       "smart-tab-name"
-      "tree-view"
-      "image-view"
       "autocomplete-webpack"
       "linter-codeclimate"
+      "whitespace"
+      "package-sync"
+      "tree-view-scope-lines"
+      "atom-ctags"
+      "ctags-status"
+      "linter-flow"
+      "linter-package-json-validator"
     ]
-    projectHome: "/Users/panda/code"
+    projectHome: "~/code"
     telemetryConsent: "limited"
     themes: [
-      "seti-ui"
-      "seti-syntax"
+      "atom-material-ui"
+      "monokai-neo-syntax"
     ]
-    titleBar: "custom"
+    titleBar: "custom-inset"
     useTreeSitterParsers: false
-    warnOnLargeFileLimit: 10
+    warnOnLargeFileLimit: 5
+  "ctags-status":
+    outerScope: true
   editor:
     fontFamily: "HackNerdFontComplete-Bold"
-    fontSize: 13
+    fontSize: 12
     preferredLineLength: 120
+    tabLength: 4
   "exception-reporting":
     userId: "d02bacd7-9c5e-41a3-aad3-5c09757c194a"
+  "file-icons": {}
   "file-types":
     $caseSensitive: true
   filesize:
     UseDecimal: true
   "flow-ide":
-    executablePath: "/usr/local/bin/flow"
+    onlyIfAppropriate: false
+    outline: {}
+    showUncovered: true
+    useLSP: true
   fonts:
     fontFamily: "Hack"
   "git-blame":
+    colorCommitAuthors: true
     columnWidth: 340
+  "git-plus":
+    general:
+      showBranchInTreeView: false
+  "ide-css": {}
+  "ide-python":
+    pylsPlugins:
+      jedi_definition:
+        follow_builtin_imports: true
+        follow_imports: true
+      pycodestyle:
+        hangClosing: true
+        maxLineLength: 120
+      rope_completion: {}
+      yapf:
+        enabled: true
   "js-hyperclick":
     jumpToImport: true
+  kite:
+    showWelcomeNotificationOnStartup: false
+  "language-babel":
+    allowLocalOverride: true
+    autoIndentJSX: true
+    babelMapsPath: ".transpiled/maps"
+    babelTranspilePath: ".transpiled/code"
+    createMap: true
+    createTranspiledCode: true
+    emmetCSSAutocomplete: true
   "lcov-info": {}
   linter:
-    lintOnChangeInterval: 10000
+    lintOnChangeInterval: 60000
   "linter-codeclimate":
     disableTimeout: true
   "linter-eslint":
     autofix:
       fixOnSave: true
   "linter-flake8":
+    executablePath: "~/.pyenv/shims/flake8"
     maxLineLength: 120
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
+  "linter-json-lint": {}
   "linter-pyflakes": {}
   "linter-pylint":
     rcFile: "%p/.pylintrc"
+  "linter-scss-lint": {}
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
-    panelHeight: 209
+    panelHeight: 210
+    showPanel: true
     showProviderName: true
     statusBarRepresents: "Current File"
   "markdown-writer":
     fileExtension: ".md"
+  "node-debug":
+    nodePath: "babel-node"
+  "prettier-atom":
+    formatOnSaveOptions:
+      isDisabledIfNotInPackageJson: true
+    useEslint: true
+    useStylelint: true
+  "project-manager":
+    alwaysOpenInSameWindow: true
+    sortBy: "last modified"
+  "project-view":
+    displayPath: false
   "python-autopep8":
     formatOnSave: true
     maxLineLength: 120
+  "python-debugger":
+    pythonExecutable: "python3"
+  "python-isort":
+    checkOnSave: false
+    sortOnSave: true
   "remote-ftp":
     connector:
       autoUploadOnSave: "only when connected"
@@ -187,9 +303,12 @@
       projectPaths: [
         "/Users/panda/code/amp/pandas4000"
       ]
-  script: {}
+  script:
+    cwdBehavior: "Project directory of the script"
+    stopOnRerun: true
   "seti-syntax":
     dynamicColor: false
+    themeColor: "Steel"
   "seti-ui":
     compactView: true
     disableAnimations: true
@@ -208,24 +327,46 @@
     locales: [
       "en-US"
     ]
+  "structure-view":
+    AutoscrollFromSource: true
+    DoubleClickToFoldTreeView: false
   "sync-settings":
-    _lastBackupHash: "d6c8352ed4fe98899311a8f1459e24f18c2d1709"
+    _lastBackupHash: "31b3748286557e2ea21c856a15e8728d80416a58"
     blacklistedKeys: [
       "'atom-beautify.general._analyticsUserId'"
       "'sync-settings.personalAccessToken'"
     ]
-    gistId: "a1ca80026b6f0c19f31ea97104de6a6f"
-    personalAccessToken: "3ce6441eb6bcb40a9110f4368cd6325494a327bf"
+    extraFiles: [
+      "projects.cson"
+      "color-tabs.cson"
+      ".ftpconfig"
+      "packages.cson"
+      "toolbar.cson"
+      "github.cson"
+      "kite-config.json"
+    ]
+    gistId: "dd04641f45177afc3ae359c96b249a42"
+    personalAccessToken: "31356108dc864905c16140cd83d2520a9cbcab54"
+  tabs: {}
+  "terminal-plus":
+    core: {}
   "tester-jest":
     binaryPath: "npm spec"
     nodeEnv: "development"
   "todo-show": {}
+  "tree-view": {}
+  "tree-view-git-status":
+    gitFlow:
+      enabled: false
   welcome:
     showOnStartup: false
   "xatom-debug": {}
 ".breakpoints.hydrogen":
   editor:
     autoIndentOnPaste: false
+".editorconfig.source":
+  editor:
+    tabLength: 4
 ".reason.source":
   editor:
     preferredLineLength: 110

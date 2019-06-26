@@ -25,7 +25,7 @@ sourcetreebulkmerge.premerge=False
 sourcetreemerge.executable=/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh
 sourcetreebulkmerge.binary=True
 [ui]
-ignore=/Users/panda/.hgignore_global
+ignore=/Users/DJ/.hgignore_global
 commitsubrepos=no
 username=Commando Panda <djdanielsh@gmail.com>
 [extdiff]

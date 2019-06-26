@@ -118,7 +118,7 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = false
-	template = /Users/panda/.stCommitMsg
+	# template = /Users/panda/.stCommitMsg
 
 [diff]
 
@@ -184,3 +184,5 @@
 	trustExitCode = true
 [mergetool "kdiff3"]
 	keepTemporaries = false
+[status]
+	submoduleSummary = true
