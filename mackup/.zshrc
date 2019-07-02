@@ -63,7 +63,6 @@ zplug "zlsun/solarized-man"
 zplug "bric3/nice-exit-code"
 zplug "arzzen/calc.plugin.zsh"
 
-
 autoload -Uz add-zsh-hook
 
 change-prompt-title() {
@@ -137,9 +136,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv virtualenv-init -)"
 fi
 PERIODIC=10
-docker-link &
+# docker-link &
 # Show splash screen
 neofetch
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$PATH:$HOME/.rvm/bin"

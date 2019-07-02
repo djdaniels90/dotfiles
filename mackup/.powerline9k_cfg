@@ -1,3 +1,5 @@
+# https://github.com/bhilburn/powerlevel9k
+
 # OPTION 1
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -11,7 +13,6 @@ POWERLEVEL9K_DIR_HOME_FOREGROUND='black'
 
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='196'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='232'
-
 
 #Icon config
 POWERLEVEL9K_HOME_ICON='\UF20E'
@@ -51,6 +52,6 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='195'
 POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='009'
 POWERLEVEL9K_BATTERY_ICON='\UF1E6'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline kubecontext docker_machine)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline kubecontext docker_machine nvm rvm pyenv)
 # NOTE That nvm wont show if system nvm = .nvmrc
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs load nvm pyenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs load)
