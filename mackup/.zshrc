@@ -5,13 +5,16 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 # We want bash specific ones overwritten
+
 source ~/.exports
 source ~/.functions
 source ~/.aliases
+source ~/.upstart_env.sh
 
 ulimit -n 21504
 # ulimit -u 2000
@@ -93,6 +96,10 @@ zplug "HaleTom/89ffe32783f89f403bba96bd7bcd1263", \
 
 zplug "iam4x/zsh-iterm-touchbar"
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 
@@ -139,6 +146,8 @@ PERIODIC=10
 # docker-link &
 # Show splash screen
 neofetch
+
+HEROKU_AC_ZSH_SETUP_PATH=/Users/djdaniels/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

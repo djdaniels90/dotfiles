@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#9DD6EBFF",
+        "font" : "Monaco",
+        "color" : "#FFFFFF7E"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "Monaco",
+        "color" : "#FFFFFF7E"
+      },
+      "backgroundSelected" : "#181918FF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#EF3C48FF",
+        "font" : "Monaco",
+        "color" : "#D1D3D3FF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 3,
+      "iconSize" : 28
+    },
+    "search" : {
+      "paddingVertical" : 4,
+      "background" : "#181918FF",
+      "spacing" : 8,
+      "text" : {
+        "size" : 34,
+        "colorSelected" : "#000000FF",
+        "font" : "Monaco",
+        "color" : "#9BD3E7FF"
+      },
+      "backgroundSelected" : "#B3D7FFFF"
+    },
+    "window" : {
+      "color" : "#00000070",
+      "paddingHorizontal" : 8,
+      "width" : 559,
+      "borderPadding" : 9,
+      "borderColor" : "#0000006E",
+      "blur" : 40,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    },
+    "credit" : "Strex",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#EF3C48FF",
+      "thickness" : 2
+    },
+    "name" : "FireCode"
+  }
+}

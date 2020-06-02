@@ -1,20 +1,5 @@
 #!/usr/bin/env bash
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-# alias ..="cd .."
-# alias ...="cd ../.."
-# alias ....="cd ../../.."
-# alias .....="cd ../../../.."
-# alias ~="cd ~" # `cd` is probably faster to type though
-# alias -- -="cd -"
-
-# Shortcuts
-# alias d="cd ~/Documents/Dropbox"
-# alias dl="cd ~/Downloads"
-# alias dt="cd ~/Desktop"
-# alias p="cd ~/code"
-# alias g="git"
-
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
@@ -23,6 +8,16 @@ else # macOS `ls`
 	colorflag="-G"
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
+
+function assert-pwd() {
+  # these are not true/false but EXIT CODES
+  # 0 = all good, 1 = bad
+  if [[ "$PWD" =~ $1 ]] ; then
+    return 0
+  fi
+  echo 'Not in correct directory $1 - commands wont run'
+  return 1
+}
 
 alias chrome-insecure="open -a Google\ Chrome --args --disable-web-security --allow-running-insecure-content --user-data-dir=''"
 
@@ -110,15 +105,19 @@ killjobs(){
 #     kill %4
 # }
 
-zeppelin(){
-  "$(brew --prefix apache-zeppelin)/bin/zeppelin-daemon.sh" "$@"
-}
+# zeppelin(){
+#   "$(brew --prefix apache-zeppelin)/bin/zeppelin-daemon.sh" "$@"
+# }
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+fcount() {
+	 find $1 -type f | wc -l
+}
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -130,6 +129,19 @@ emptytrash() {
   sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
 }
 
+brew-force-update() {
+  brew cleanup -s
+  brew update
+  for c in $(brew cask list); do
+    info=$(brew cask info $c)
+    installed_ver=$(echo "$info" | cut -d$'\n' -f1 | tr -d ' ' | cut -d':' -f 2)
+    current_ver=$(echo "$info" | cut -d$'\n' -f3 | cut -d' ' -f 1 | rev | cut -d'/' -f 1 | rev)
+    if [ "$installed_ver" != "$current_ver" ]; then
+        echo "$c is installed '$installed_ver', current is '$current_ver'"
+        brew cask reinstall $c
+    fi
+  done
+}
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -354,96 +366,4 @@ watch() {
   local rest="$*"
   echo watching "$localpath"
   fswatch -0 -o --event Updated "$localpath" | xargs -0 -I file zsh -c "@debounce eval $rest";
-}
-
-# AMP Specific stuff
-
-watch-service() {
-  if [ -d $AMP_SAFARI_PATH/$1 ]; then
-    local olddir=$(pwd)
-    echo 'Starting watcher on service:' $1
-    watch $AMP_SAFARI_PATH/$1 dstart $1
-  else
-    echo $fg_bold[red] 'Safari:'$1 'Does not exist - skipping' $reset_color
-  fi
-}
-
-prod-tunnels() {
-  ssh -N -A -L 9042:10.0.41.196:9042 djdaniels@bastion.sandbox-amp.net
-  ssh -N -L 9200:internal-PROD-elb-elasticsearch-463607781.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion.sandbox-amp.net
-}
-
-
-es-sb() {
-  ssh -N -L 9200:internal-sandbox-elb-es-02-240508465.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion.sandbox-amp.net
-}
-
-es2-sb() {
-  ssh -N -L 9300:internal-sandbox-elb-elasticsearch-2135334639.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion-sandbox.sandbox-amp.net
-}
-
-cass-sb() {
-  # ssh -N -A -L 9042:10.0.41.86:9042 djdaniels@bastion.sandbox-amp.net
-  ssh -N -A -L 9042:10.0.43.6:9042 -o GatewayPorts=yes djdaniels@bastion.sandbox-amp.net
-}
-
-tunnel-status() {
-  echo 'ElasticSearch'
-  whatsOnPort 9200
-  echo 'ElasticSearch 2'
-  whatsOnPort 9300
-  echo 'Cassandra'
-  whatsOnPort 9042
-}
-
-spider-tunnels () {
-  es-sb &
-  es2-sb &
-  cass-sb &
-}
-
-spider-status() {
-  dstatus
-  echo $fg[green] 'SSH Tunnels' $fg[reset]
-  tunnel-status
-}
-
-spider () {
-  case "$1" in
-    status)
-      spider-status
-      ;;
-    tunnels)
-      spider-tunnels
-      ;;
-    watch)
-      watch-service $2
-      ;;
-    *)
-      if [ ! -z $1 ]; then
-        local oldpwd=$(pwd)
-        echo 'Changing directories'
-        cd $AMP_SAFARI_PATH/spider
-        ./spider "$@"
-        cd ${oldpwd}
-      else
-        echo 'What do you want to do?'
-      fi
-  esac
-}
-
-#########################
-# CANIS MAJORIS ALIASES #
-#########################
-
-canis () {
-  if [ ! -z $1 ]; then
-    local oldpwd=$(pwd)
-    echo 'Changing directories'
-    cd $AMP_CANIS_PATH
-    npm run $1
-    cd ${oldpwd}
-  else
-    echo 'What do you want to do?'
-  fi
 }

@@ -158,6 +158,8 @@ brew_install_gamedev() {
 brew_install_communication() {
 	brew cask install --appdir="/Applications" discord
 	brew cask install --appdir="/Applications" slack
+	echo 'Installing Slack Dark Theme'
+	curl -s https://raw.githubusercontent.com/caiceA/slack-black-theme/master/blackSlack.sh | bash -s
 	brew cask install --appdir="/Applications" zoom
 	brew cask install --appdir="/Applications" chatology
 }

@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.Powerline</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>2CA0483D-9A72-4EE6-BB63-2ADFDC048800</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5FCE2B54-1839-48E0-96D6-128D355202C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D2E586A-7B77-42D2-B8E9-434673D9A6EE</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>View in finder.</string>
+			</dict>
+		</array>
+		<key>36E7FA61-D7A8-4006-B0A1-C407AED26E3F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC8BAAA5-7B15-411A-85B6-0FB6020B7100</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4682DC1C-550B-46AA-B4AD-5B9393B57E45</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>894A28E1-12DD-458D-BC59-701415AEC8AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4A6891AC-1D26-4090-A85B-BC7E1B52E389</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open In Finder</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8EDAD339-106B-4C9B-B49E-D4E86C070CA2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in a Terminal</string>
+			</dict>
+		</array>
+		<key>5C7CBF1F-EEDE-4887-B24F-63B767841357</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC4F5125-284B-4316-A411-3B7648969FD6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>701B4294-FE1A-4209-A3D5-0551CA128314</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC4F5125-284B-4316-A411-3B7648969FD6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>71C69CF4-38BB-41B7-BAD4-712FD1FF493B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>701B4294-FE1A-4209-A3D5-0551CA128314</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B95EBBAF-6B73-4D23-8FFE-2D21E8099FA6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5C7CBF1F-EEDE-4887-B24F-63B767841357</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FDC5853E-92EA-448E-BD55-AB1E3720BC8F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6BE2D0CC-7ED7-4BCE-B9D2-92319AC0358C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FEA7A354-2583-4C43-9890-19AA838A2F6B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72345AE6-3BA5-46CB-86A9-B75B1DA07451</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>A workflow to work with Powerline.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Powerline Toolbox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pl:loc</string>
+				<key>runningsubtext</key>
+				<string>Loading Information...</string>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+//
+// Set this variable to the location of pip on your computer.
+//
+$piploc = "/usr/local/bin/pip";
+
+//
+// The number of items to display to the user.
+//
+$count = 0;
+
+//
+// Get the raw query and store it for use.
+//
+$input = trim("{query}");
+$output = array();
+
+//
+// Ask pip for the location of powerline.
+//
+exec("$piploc show powerline",$output);
+
+foreach($output as $line) {
+	$parts = explode(":",$line);
+	if(strcasecmp(trim($parts[0]),"location") == 0) {
+		$loc = trim($parts[1]);
+		$count++;
+		$wf-&gt;result("pl$count",$loc,$loc,"Powerline is installed here.",'icon.png',"yes",'');
+	}
+}
+
+if($count &lt; 1) {
+	$wf-&gt;result(999,"", "Illegal Responce, location to pip not right.", "Powerline Toolbox", 'icon.png', "no", '');
+}
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>title</key>
+				<string>The Location of Powerline Install by pip</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4682DC1C-550B-46AA-B4AD-5B9393B57E45</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>894A28E1-12DD-458D-BC59-701415AEC8AA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>4A6891AC-1D26-4090-A85B-BC7E1B52E389</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>cd {query};</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>8EDAD339-106B-4C9B-B49E-D4E86C070CA2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pl:doc</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>text</key>
+				<string>Powerline Documentation on the Web</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FEA7A354-2583-4C43-9890-19AA838A2F6B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://powerline.readthedocs.org/en/latest/</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>72345AE6-3BA5-46CB-86A9-B75B1DA07451</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pl:fonts</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>text</key>
+				<string>Open Powerline Enabled Fonts</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>36E7FA61-D7A8-4006-B0A1-C407AED26E3F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://github.com/Lokaltog/powerline-fonts</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>BC8BAAA5-7B15-411A-85B6-0FB6020B7100</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pl:github</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>text</key>
+				<string>Open Powerline @GitHub</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FDC5853E-92EA-448E-BD55-AB1E3720BC8F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://github.com/Lokaltog/powerline</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6BE2D0CC-7ED7-4BCE-B9D2-92319AC0358C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>pl:editor</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>title</key>
+				<string>Select a Text Editor to use.</string>
+				<key>types</key>
+				<array>
+					<string>com.apple.application-bundle</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>B95EBBAF-6B73-4D23-8FFE-2D21E8099FA6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/Editor.txt";
+fi
+
+# Set the notes directory name.
+echo "{query}" &gt; "$(getDataDir)/Editor.txt";
+
+# Tell the user.
+echo "The editor that will be used: {query}";
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5C7CBF1F-EEDE-4887-B24F-63B767841357</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist";
+}
+
+BUNDLEID="$(getBundleId)";
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/Editor.txt";
+fi
+
+editor=`cat "$(getDataDir)/Editor.txt"`;
+base="${HOME}/.config/powerline";
+file="${base}/{query}";
+
+if [ ! -f "${file}" ]; then
+	touch "${file}";
+	cp "$(dirname ${file})/default.json" "${file}";
+fi
+
+/usr/bin/open -a "$editor" "$file";
+
+# Tell the user.
+echo "Opening {query}.";
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>701B4294-FE1A-4209-A3D5-0551CA128314</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Powerline Toolbox</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FC4F5125-284B-4316-A411-3B7648969FD6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pl:conf</string>
+				<key>runningsubtext</key>
+				<string>Loading Directory...</string>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+//
+// Function:    buildResult
+//
+// Description: Conditionally build the result XML if the
+//              input contains the argument.
+//
+function buildResult($wf, $input, $count, $arg, $title, $subtitle, $icon, $valid,$line) {
+   $result = 0;
+   if(preg_match("/.*$input/i","$arg") === 1) {
+      $wf-&gt;result($count, $arg, $title, $subtitle, $icon, $valid, $line);
+      $result = 1;
+   }
+   return($result);
+}
+
+//
+// Create a Workflows object to create the xml.
+//
+$wf = new Workflows();
+
+//
+// We are going to count the number of items given to the user.
+//
+$count = 0;
+
+//
+// This is the base directory for configuration files.
+//
+$base = getenv('HOME') . "/.config/powerline/";
+
+//
+// Get and clean the input.
+//
+$input = trim("{query}");
+$parts = explode("/",$input);
+$pcount = count($parts);
+
+switch($pcount) {
+	case 0:
+	case 1:
+		//
+		// Top directory. Show the options here.
+		//
+		$count += buildResult($wf,"${parts[0]}", "PL$count","config.json","config.json", "Edit File",'icon.png','yes','');
+		$count += buildResult($wf,"${parts[0]}", "PL$count","colors.json","colors.json", "Edit File",'icon.png','yes','');
+		$count += buildResult($wf,"${parts[0]}", "PL$count","colorschemes/","colorschemes", "Go to Directory",'icon.png','no',"colorschemes/");
+		$count += buildResult($wf,"${parts[0]}", "PL$count","themes/","themes", "Go to Directory",'icon.png','no',"themes/");
+		break;
+
+	case 2:
+		//
+		// Subdirectory. Figure out which one and give the options. This
+		// directory level only has other directories.
+		//
+		exec("ls -AF \"$base${parts[0]}\"",$output);
+		foreach($output as $line) {
+			$count += buildResult($wf,"${parts[1]}", "PL$count","${parts[0]}/$line/","$line", "Go to Directory",'icon.png','no',"${parts[0]}/$line");
+
+		}
+		break;
+
+	case 3:
+		//
+		// this is one of the sub-sub directories. Here is where they
+		// can create files.
+		//
+		exec("ls \"$base${parts[0]}/${parts[1]}\"",$output);
+		foreach($output as $line) {
+			$count += buildResult($wf,"${parts[2]}", "PL$count","${parts[0]}/${parts[1]}/$line","$line", "Edit File",'icon.png','yes',"");
+
+		}
+		if($count &lt; 1) {
+			$line = "${parts[2]}.json";
+			$count++;
+			$wf-&gt;result("PL$count","${parts[0]}/${parts[1]}/$line","$line", "Create and Edit File",'icon.png','yes',"");
+		}
+		break;
+}
+
+
+if($count &lt; 1) {
+	$wf-&gt;result(999,"","Improper Input: Try again", "Powerline Toolbox",'icon.png','yes','');
+}
+
+//
+// give the xml to Alfred.
+//
+echo $wf-&gt;toxml();
+</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>title</key>
+				<string>Powerline Configuration Browser</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>71C69CF4-38BB-41B7-BAD4-712FD1FF493B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pl:goconf</string>
+				<key>runningsubtext</key>
+				<string>Loading location...</string>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$wf-&gt;result(999,"~/.config/powerline","Powerline Configuration Directory", "Powerline Toolbox",'icon.png','yes','');
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Powerline Toolbox</string>
+				<key>title</key>
+				<string>Go to Powerline Configuration Directory</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2CA0483D-9A72-4EE6-BB63-2ADFDC048800</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>5FCE2B54-1839-48E0-96D6-128D355202C1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>2D2E586A-7B77-42D2-B8E9-434673D9A6EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Powerline Links:
+
+Documentation
+https://powerline.readthedocs.org/en/latest/index.html
+
+Download
+https://github.com/Lokaltog/powerline
+
+Powerline Enabled Fonts
+https://github.com/Lokaltog/powerline-fonts</string>
+	<key>uidata</key>
+	<dict>
+		<key>2CA0483D-9A72-4EE6-BB63-2ADFDC048800</key>
+		<dict>
+			<key>ypos</key>
+			<real>980</real>
+		</dict>
+		<key>2D2E586A-7B77-42D2-B8E9-434673D9A6EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
+		<key>36E7FA61-D7A8-4006-B0A1-C407AED26E3F</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>4682DC1C-550B-46AA-B4AD-5B9393B57E45</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4A6891AC-1D26-4090-A85B-BC7E1B52E389</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>5C7CBF1F-EEDE-4887-B24F-63B767841357</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>5FCE2B54-1839-48E0-96D6-128D355202C1</key>
+		<dict>
+			<key>ypos</key>
+			<real>980</real>
+		</dict>
+		<key>6BE2D0CC-7ED7-4BCE-B9D2-92319AC0358C</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>701B4294-FE1A-4209-A3D5-0551CA128314</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>71C69CF4-38BB-41B7-BAD4-712FD1FF493B</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>72345AE6-3BA5-46CB-86A9-B75B1DA07451</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>894A28E1-12DD-458D-BC59-701415AEC8AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8EDAD339-106B-4C9B-B49E-D4E86C070CA2</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>B95EBBAF-6B73-4D23-8FFE-2D21E8099FA6</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>BC8BAAA5-7B15-411A-85B6-0FB6020B7100</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>FC4F5125-284B-4316-A411-3B7648969FD6</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>FDC5853E-92EA-448E-BD55-AB1E3720BC8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>FEA7A354-2583-4C43-9890-19AA838A2F6B</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://customct.com/alfred-2-workflows.md</string>
+</dict>
+</plist>

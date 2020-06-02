@@ -2,6 +2,8 @@
 export PATH="$HOME/bin:$PATH";
 echo 'Running .bash_profile'
 
+export PRINT_TEST_OUTPUT=true
+
 ulimit -n 21504
 ulimit -u 2000
 ulimit -c 2000

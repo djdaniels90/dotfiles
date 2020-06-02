@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Giphy</name>
+  <version>3.1.1</version>
+  <bundle>com.arbitrarydefinitions.giphy</bundle>
+  <updated>1521387795</updated>
+  <file>giphy.alfredworkflow</file>
+</workflow>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>IP Address</name>
+  <version>1.0.0</version>
+  <bundle>com.alexchantastic.ipaddress</bundle>
+  <updated>1534734574</updated>
+  <file>alfred-ip-address-workflow.alfredworkflow</file>
+</workflow>

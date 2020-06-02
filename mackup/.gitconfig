@@ -69,7 +69,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = /Users/DJ/.gitignore_global
+	excludesfile = /Users/djdaniels/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -174,11 +174,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [user]
-	email = djdanielsh@gmail.com
-	name = Commando Panda
+	email = dj.daniels@upstart.com
+	name = DJ Daniels
+	signingkey = F622411C163BE11A
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

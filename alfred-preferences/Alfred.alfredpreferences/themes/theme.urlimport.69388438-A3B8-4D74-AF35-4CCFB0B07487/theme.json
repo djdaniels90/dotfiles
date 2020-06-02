@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#A4ABCAFF",
+        "font" : "Menlo",
+        "color" : "#848DB7FF"
+      },
+      "shortcut" : {
+        "size" : 14,
+        "colorSelected" : "#94BEFFFF",
+        "font" : "Menlo",
+        "color" : "#38FFBAFF"
+      },
+      "backgroundSelected" : "#292D45FF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#EEEFF6FF",
+        "font" : "Menlo",
+        "color" : "#A4ABCAFF"
+      },
+      "iconPaddingHorizontal" : 9,
+      "paddingVertical" : 6,
+      "iconSize" : 24
+    },
+    "search" : {
+      "paddingVertical" : 5,
+      "background" : "#292D45FF",
+      "spacing" : 8,
+      "text" : {
+        "size" : 24,
+        "colorSelected" : "#000000FF",
+        "font" : "Menlo",
+        "color" : "#EDEEF6FF"
+      },
+      "backgroundSelected" : "#B3D7FFFF"
+    },
+    "window" : {
+      "color" : "#181A2AFF",
+      "paddingHorizontal" : 10,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 18,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    },
+    "credit" : "Conlin Durbin",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#FE476DFF",
+      "thickness" : 2
+    },
+    "name" : "Dank Neon"
+  }
+}
