@@ -1,5 +1,12 @@
 DEFAULT_USER=$USER
 
+# can change all these custom sources to conditionaly load them through zpromp.
+# the goal would be to make it so we can source this file only into server
+test -e "${HOME}/.exports" && source ~/.exports
+test -e "${HOME}/.aliases" && source ~/.aliases
+test -e "${HOME}/.upstart_env" && source ~/.upstart_env
+
+
 ### Added by Zinit's installer
 ### Check if zinit is installed or install if needed
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -51,12 +58,15 @@ zinit snippet OMZP::colored-man-pages
 zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 
-zinit ice nocompile'!' wait'!0' pick'enhancd.plugin.zsh'
+zinit ice wait'!0' pick'enhancd.plugin.zsh'
 zinit light b4b4r07/enhancd
+# zinit snippet OMZP::enhancd # or this one? who knows?
+zinit ice from"gh-r" as"program"
+zinit light junegunn/fzf-bin
 
-# zinit snippet OMZP::enhancd
-
-# Using enhancd for now
+# Using enhancd for now ^^
+# but might be neat to have both? not sure...
+# also not sure how to source this yet
 # zplugin ice multisrc'*.zsh' pick'/dev/null'
 # zinit ice as"program" cp"z.sh -> z" pick"z"
 # zinit light rupa/z
@@ -109,6 +119,9 @@ zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 zinit light pyenv/pyenv
 
+
+source ~/.functions
+
 #  NOTE EVERYTHIGN ABVOE THIS LINE SHOULD BE WORKING
 #  WIth an attempt at some sort of ordering- to be finalized
 #  when all of these are converted
@@ -116,24 +129,27 @@ zinit light pyenv/pyenv
 
 # colortest
 
-zinit snippet OMZP::rvm
+
+
 
 # zinit load HaleTom/89ffe32783f89f403bba96bd7bcd1263
-#  or rg?
-# zinit ice from"gh-r" as"program"
-# zinit light junegunn/fzf-bin
 
 # sharkdp/pastel
 # zinit ice as"command" from"gh-r" mv"pastel* -> pastel" pick"pastel/pastel"
 # zinit light sharkdp/pastel
 
-
 # asciinema
-# zinit ice as"command" wait lucid \
-#     atinit"export PYTHONPATH=$ZPFX/lib/python3.7/site-packages/" \
-#     atclone"python3 setup.py --quiet install --prefix $ZPFX" \
-#     atpull'%atclone' test'0' \
-#     pick"$ZPFX/bin/asciinema"
+zinit ice as"command" wait lucid \
+    atinit"export PYTHONPATH=$ZPFX/lib/python3.7/site-packages/" \
+    atclone"PYTHONPATH=$ZPFX/lib/python3.7/site-packages/ \
+    python3 setup.py --quiet install --prefix $ZPFX" \
+    atpull'%atclone' test'0' \
+    pick"$ZPFX/bin/asciinema"
+zinit load asciinema/asciinema.git
+
+zinit light tysonwolker/iterm-tab-colors
+zinit light lukechilds/zsh-better-npm-completion
+source <(kubectl completion zsh)
 
 # Terminal GIPHY creator cast terminal
 # zinit load asciinema/asciinema.git
@@ -146,6 +162,13 @@ zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 zinit light pyenv/pyenv
 
+export NVM_AUTO_USE=true
+export NVM_COMPLETION=true
+zinit ice pick"*.plugin.zsh"
+zinit light lukechilds/zsh-nvm
+
+zinit snippet OMZP::rvm
+
 # zinit creinstall %HOME/my_completions
 
 export PATH="/usr/local/sbin:$PATH"
@@ -155,45 +178,27 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
-# can change all these custom sources to conditionaly load them through zpromp.
-# the goal would be to make it so we can source this file only into server
-
-source ~/.exports
-source ~/.functions
-source ~/.aliases
-source ~/.upstart_env.sh
-source ~/.secrets
-
+# source ~/.upstart_env.sh
+# source ~/.secrets
 ulimit -n 21504
 ulimit -c 2000
 ulimit -s 10000
 
 
 
+# trying  to install these unconfirmed
 # export PIPENV_VENV_IN_PROJECT=1
-# zplug "plugins/git", from:oh-my-zsh
-# zplug "b4b4r07/enhancd", use:init.sh
-# zplug "plugins/npm", from:oh-my-zsh
-# zplug "plugins/brew", from:oh-my-zsh
-# zplug "plugins/docker", from:oh-my-zsh
-# zplug "plugins/docker-machine", from:oh-my-zsh
-# zplug "lukechilds/zsh-better-npm-completion", defer:2
-
-# zplugin ice multisrc'*.zsh' pick'/dev/null'
-# zinit light OMZ::rvm
-# export NVM_AUTO_USE=true
-#
-# zplugin ice multisrc'*.zsh' pick'/dev/null'
-# zinit light lukechilds/zsh-nvm
+zinit snippet OMZP::git
+zinit snippet OMZP::npm
+zinit snippet OMZP::brew
+# zinit snippet OMZP::docker
+zinit snippet OMZP::docker-machine
+zinit snippet OMZP::kubectl
 
 # auto-pipenv.zsh
 # zplug "djdaniels90/759dc65d7775f76e5117337b59dc4833", from:gist
-# zplug "plugins/pyenv", from:oh-my-zsh
 # zplug "paulmelnikow/zsh-startup-timer"
 
-# if [ $commands[kubectl] ]; then
-# 	zplug "plugins/kubectl", from:oh-my-zsh
-# 	source <(kubectl completion zsh)
 # fi
 # zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 # zplug "plugins/pip", from:oh-my-zsh
@@ -201,28 +206,17 @@ ulimit -s 10000
 #
 # 		# eval "$(pipenv --completion)"
 # }
-# zinit light tysonwolker/iterm-tab-colors
 
-# zplug "zlsun/solarized-man"
-# zplug "bric3/nice-exit-code"
-# zplug "arzzen/calc.plugin.zsh"
 
 # autoload -Uz add-zsh-hook
 
-# change-prompt-title() {
-#   echo -ne "\e]1;${PWD##*/}\a"
-# }
+change-prompt-title() {
+  echo -ne "\e]1;${PWD##*/}\a"
+}
 
-# add-zsh-hook chpwd change-prompt-title
+add-zsh-hook chpwd change-prompt-title
 
-# periodic
-#
-# add-zsh-hook chpwd change-prompt-title
-# zplug  "hagkozak/zhooks", use:zhooks.plugin.zsh
-
-# zplug "lukechilds/zsh-better-npm-completion"
-# zstyle ':completion:*' menu select=2
-# zplug "zsh-users/zsh-history-substring-search"
+zstyle ':completion:*' menu select=1
 # zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
 # zplug "teamupstart/upstart_web", \
@@ -239,8 +233,7 @@ ulimit -s 10000
 # fi
 
 # The following lines were added by compinstall
-# zstyle :compinstall filename '~/.zshrc'
-
+zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 # # End of lines added by compinstall
@@ -248,7 +241,7 @@ compinit
 # HISTFILE=~/.histfile
 # HISTSIZE=5000
 # SAVEHIST=5000
-# setopt appendhistory autocd extendedglob notify
+setopt appendhistory autocd extendedglob notify
 # bindkey -v
 # End of lines configured by zsh-newuser-install
 

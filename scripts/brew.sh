@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 install_brew() {
 	which -s brew
 	if [[ $? != 0 ]] ; then
@@ -60,9 +59,9 @@ brew_install_bash4() {
 }
 
 brew_install_zsh_env() {
-	brew install zsh
-	brew install zsh-completions
-	brew install zsh-autosuggestions
+	# brew install zsh
+	# brew install zsh-completions
+	# brew install zsh-autosuggestions
 	# brew install zplug
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 	brew install neofetch
