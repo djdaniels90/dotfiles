@@ -59,6 +59,7 @@ zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 
 zinit ice wait'!0' pick'enhancd.plugin.zsh'
+# zinit ice nocompile'!' wait'!0' pick'enhancd.plugin.zsh' atinit"zicompinit; zicdreplay"
 zinit light b4b4r07/enhancd
 # zinit snippet OMZP::enhancd # or this one? who knows?
 zinit ice from"gh-r" as"program"
