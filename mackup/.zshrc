@@ -45,26 +45,43 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node \
     zinit-zsh/z-a-submods
 
-source $HOME/.zinit/bin/zinit.zsh
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
 zinit snippet OMZL::git.zsh
 zinit ice atload"unalias grv"
 zinit snippet OMZP::git
+
+# source $HOME/.zinit/bin/zinit.zsh
+# autoload -Uz _zinit
+# (( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+# must be after the above syntax/suggestion updating
+zinit light zdharma/history-search-multi-word
 
 zinit snippet OMZP::colored-man-pages
 
 zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 
-zinit ice wait'!0' pick'enhancd.plugin.zsh'
 # zinit ice nocompile'!' wait'!0' pick'enhancd.plugin.zsh' atinit"zicompinit; zicdreplay"
+zinit ice pick'enhancd.plugin.zsh' atinit"zicompinit; zicdreplay"
 zinit light b4b4r07/enhancd
+
 # zinit snippet OMZP::enhancd # or this one? who knows?
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf-bin
-
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:40%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+# export FZF_DEFAULT_OPTS="
+#   --bind='?:toggle-preview'
+#   --bind='ctrl-u:preview-page-up'
+#   --bind='ctrl-d:preview-page-down'
+#   --preview-window 'right:60%:hidden:wrap'
+#   --preview '([[ -d {} ]] && tree -C {}) || ([[ -f {} ]] && bat --style=full --color=always {}) || echo {}'"
 # Using enhancd for now ^^
 # but might be neat to have both? not sure...
 # also not sure how to source this yet
@@ -80,18 +97,10 @@ zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit light trapd00r/LS_COLORS
 
-# setup autosuggestions
-zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" zdharma/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' zsh-users/zsh-completions
-
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-zinit light zdharma/history-search-multi-word
 
 # NOTE: Before each prompt, direnv checks for the existence of a .envrc file in the current
 # and parent directories. If the file exists (and is authorized), it is loaded into a bash
@@ -130,9 +139,6 @@ source ~/.functions
 
 # colortest
 
-
-
-
 # zinit load HaleTom/89ffe32783f89f403bba96bd7bcd1263
 
 # sharkdp/pastel
@@ -146,7 +152,7 @@ zinit ice as"command" wait lucid \
     python3 setup.py --quiet install --prefix $ZPFX" \
     atpull'%atclone' test'0' \
     pick"$ZPFX/bin/asciinema"
-zinit load asciinema/asciinema.git
+zinit load asciinema/asciinema
 
 zinit light tysonwolker/iterm-tab-colors
 zinit light lukechilds/zsh-better-npm-completion
@@ -158,10 +164,15 @@ source <(kubectl completion zsh)
 #  Virtual Env Related Shit
 #  PYENV, RVM, NVM...
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
     atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 zinit light pyenv/pyenv
+# i think this is getting added twice to path
+# eval "$(pyenv init -)"
 
 export NVM_AUTO_USE=true
 export NVM_COMPLETION=true
@@ -173,9 +184,8 @@ zinit snippet OMZP::rvm
 # zinit creinstall %HOME/my_completions
 
 export PATH="/usr/local/sbin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-# export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
@@ -184,8 +194,6 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 ulimit -n 21504
 ulimit -c 2000
 ulimit -s 10000
-
-
 
 # trying  to install these unconfirmed
 # export PIPENV_VENV_IN_PROJECT=1
