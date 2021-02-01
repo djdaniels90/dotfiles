@@ -49,6 +49,13 @@ zinit snippet OMZL::git.zsh
 zinit ice atload"unalias grv"
 zinit snippet OMZP::git
 
+
+# Scripts that are built at install (there's single default make target, "install",
+# and it constructs scripts by `cat'ing a few files). The make'' ice could also be:
+# `make"install PREFIX=$ZPFX"`, if "install" wouldn't be the only, default target.
+zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+zinit light tj/git-extras
+
 # source $HOME/.zinit/bin/zinit.zsh
 # autoload -Uz _zinit
 # (( ${+_comps} )) && _comps[zinit]=_zinit
