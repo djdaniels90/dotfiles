@@ -195,6 +195,9 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+# 
+# export LDFLAGS="-L/usr/local/opt/ruby/lib"
+# export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 # source ~/.upstart_env.sh
 # source ~/.secrets
