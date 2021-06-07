@@ -37,6 +37,8 @@
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
+    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    newline
     # prompt_char           # prompt symbol
   )
 
@@ -50,7 +52,7 @@
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
@@ -575,7 +577,7 @@
   # Note: The name of this parameter doesn't reflect its meaning at all.
   # Note: If this parameter is set to true, it won't hide tools.
   # Tip:  Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_PROMPT_ALWAYS_SHOW.
-  typeset -g POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW=true
 
   # If set to false, hide tool versions that are equal to "system".
   #
