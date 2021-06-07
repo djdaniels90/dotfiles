@@ -131,7 +131,7 @@ brew_install_licensed_apps() {
 	brew cask install --appdir="/Applications" istat-menus
 	brew cask install --appdir="/Applications" 1password
 	brew cask install --appdir="/Applications" daisydisk
-	brew cask install --appdir="/Applications" microsoft-office
+	# brew cask install --appdir="/Applications" microsoft-office
 	brew cask install --appdir="/Applications" airmail-beta
 	brew cask install --appdir="/Applications" alfred
 	brew cask install --appdir="/Applications" bartender
@@ -143,25 +143,25 @@ brew_install_licensed_apps() {
 }
 
 brew_install_gaming() {
-	brew cask install --appdir="/Applications" wine-stable
-	brew cask install --appdir="/Applications" battle-net
-	brew cask install --appdir="/Applications" wineskin-winery
-	brew cask install --appdir="/Applications" steam
-	brew cask install --appdir="/Applications" firestormos
+	# brew cask install --appdir="/Applications" wine-stable
+	# brew cask install --appdir="/Applications" battle-net
+	# brew cask install --appdir="/Applications" wineskin-winery
+	# brew cask install --appdir="/Applications" steam
+	# brew cask install --appdir="/Applications" firestormos
 }
 
 brew_install_gamedev() {
-	brew cask install --appdir="/Applications" epic-games
-	brew cask install --appdir="/Applications" unity
+	# brew cask install --appdir="/Applications" epic-games
+	# brew cask install --appdir="/Applications" unity
 }
 
 brew_install_communication() {
-	brew cask install --appdir="/Applications" discord
+	# brew cask install --appdir="/Applications" discord
 	brew cask install --appdir="/Applications" slack
 	echo 'Installing Slack Dark Theme'
-	curl -s https://raw.githubusercontent.com/caiceA/slack-black-theme/master/blackSlack.sh | bash -s
-	brew cask install --appdir="/Applications" zoom
-	brew cask install --appdir="/Applications" chatology
+	# curl -s https://raw.githubusercontent.com/caiceA/slack-black-theme/master/blackSlack.sh | bash -s
+	# brew cask install --appdir="/Applications" zoom
+	# brew cask install --appdir="/Applications" chatology
 }
 
 brew_install_browsers() {
@@ -213,6 +213,7 @@ brew_install_misc() {
 	brew cask install --appdir="/Applications" appcleaner
 	brew cask install --appdir="/Applications" geektool
 	brew cask install --appdir="/Applications" atom
+	brew cask install --appdir="/Applications" jetbrains-toolbox
 	brew install git
 	brew install git-lfs
 	brew cask install --appdir="/Applications" gitkraken
