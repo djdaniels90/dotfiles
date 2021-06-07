@@ -202,7 +202,6 @@
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     panelHeight: 210
-    showPanel: true
     showProviderName: true
     statusBarRepresents: "Current File"
   "markdown-writer":
