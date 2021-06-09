@@ -1,0 +1,15 @@
+packages: [
+  "atom-beautify"
+  "atom-file-icons"
+  "busy-signal"
+  "Hydrogen"
+  "intentions"
+  "linter"
+  "linter-shellcheck"
+  "linter-ui-default"
+  "monokai-seti"
+  "package-sync"
+  "pigments"
+  "seti-syntax"
+  "seti-ui"
+]

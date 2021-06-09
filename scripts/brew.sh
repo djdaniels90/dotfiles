@@ -7,8 +7,8 @@ install_brew() {
 	    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 	brew tap bramstein/webfonttools
-	brew tap caskroom/fonts
-	brew tap caskroom/versions
+	brew tap homebrew/cask-fonts
+	brew tap homebrew/cask-versions
 	# Make sure we’re using the latest Homebrew.
 	brew update
 	brew upgrade
@@ -24,19 +24,23 @@ brew_install_core_utils() {
 	brew install gnu-sed --with-default-names # Install GNU `sed`, overwriting the built-in `sed`.
 	brew install ack
 	brew install adns
+	# brew install openshift-cli
+	brew install awscli
 	brew install wget --with-iri # Install `wget` with IRI support.
-	brew cask install --appdir="/Applications" java
-	brew cask install --appdir="/Applications" osxfuse
-	brew cask install --appdir="/Applications" xquartz
-	brew cask install --appdir="/Applications" keepingyouawake
-	brew cask install --appdir="/Applications" dropbox
+	brew install --cask osxfuse
+	brew install --cask xquartz
+	brew install --cask keepingyouawake
+	brew install --cask adoptopenjdk
+	# brew install --cask dropbox
 	# Install more recent versions of some macOS tools.
-	brew install vim --with-override-system-vi
+	# brew install vim --with-override-system-vi
 	brew install grep
-	# GNU Screen is a terminal multiplexer,
-	# brew install screen
-	brew install homebrew/php/php56 --with-gmp
-	brew install stow
+	brew install mackup
+}
+
+brew_install_fonts() {
+	brew install --cask font-hack-nerd-font
+	brew install --cask font-3270-nerd-font
 }
 
 brew_install_encryption() {
@@ -45,43 +49,41 @@ brew_install_encryption() {
 	brew install openssl
 	brew install ssh-copy-id
 	brew install openssh
-	brew cask install --appdir="/Applications" gpg-suite
-	brew cask install --appdir="/Applications" veracrypt
-	brew cask install --appdir="/Applications" exodus
+	brew install --cask gpg-suite
+	brew install --cask veracrypt
+	# brew install --cask exodus # TODO: If PERSONAL
 }
 
-brew_install_bash4() {
-	brew install bash
-	brew install bash-completion2
-	# if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-	# 	echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-	# fi;
-}
+#  NOT SURE IF I NEED THIS CRAP ANYMORE
+# brew_install_bash4() {
+# 	brew install bash
+# 	brew install bash-completion2
+# 	# if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+# 	# 	echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+# 	# fi;
+# }
 
 brew_install_zsh_env() {
-	# brew install zsh
-	# brew install zsh-completions
-	# brew install zsh-autosuggestions
-	# brew install zplug
+	# TODO: check if zsh is installed or not already
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 	brew install neofetch
-	# pip3 install virtualenv
-	# if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-	# 	echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-	# fi;
+	if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+		echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+	fi;
 }
 
 brew_install_terminals() {
-	brew cask install --appdir="/Applications" iterm2
-	brew cask install --appdir="/Applications" kitty
+	brew install --cask iterm2
+	brew install exa
+	# brew install --cask kitty
 }
 
 brew_install_db() {
-	brew install mongodb
+	# brew install mongodb # NOT FOUND
 	brew install postgresql
 	brew install sqlite
 	brew install mysql-client
-	brew cask install --appdir="/Applications" dbeaver-enterprise
+	brew install --cask dbeaver-enterprise
 }
 
 brew_install_font_tools() {
@@ -128,52 +130,54 @@ brew_install_ctf_tools() {
 }
 
 brew_install_licensed_apps() {
-	brew cask install --appdir="/Applications" istat-menus
-	brew cask install --appdir="/Applications" 1password
-	brew cask install --appdir="/Applications" daisydisk
-	# brew cask install --appdir="/Applications" microsoft-office
-	brew cask install --appdir="/Applications" airmail-beta
-	brew cask install --appdir="/Applications" alfred
-	brew cask install --appdir="/Applications" bartender
-	brew cask install --appdir="/Applications" dash
-	brew cask install --appdir="/Applications" little-snitch
-	brew cask install --appdir="/Applications" micro-snitch
-	brew cask install --appdir="/Applications" ipartition
-	brew cask install --appdir="/Applications" fantastical
+	brew install --cask istat-menus
+	brew install --cask 1password
+	brew install --cask daisydisk
+	# brew install --cask microsoft-office
+	# brew install --cask airmail-beta
+	brew install --cask alfred
+	brew install --cask bartender
+	brew install --cask dash
+	brew install --cask little-snitch
+	brew install --cask micro-snitch
+	brew install --cask ipartition
+	brew install --cask fantastical
 }
 
 brew_install_gaming() {
-	# brew cask install --appdir="/Applications" wine-stable
-	# brew cask install --appdir="/Applications" battle-net
-	# brew cask install --appdir="/Applications" wineskin-winery
-	# brew cask install --appdir="/Applications" steam
-	# brew cask install --appdir="/Applications" firestormos
+  echo "nothing"
+  # brew install --cask wine-stable
+	# brew install --cask battle-net
+	# brew install --cask wineskin-winery
+	# brew install --cask steam
+	# brew install --cask firestormos
 }
 
 brew_install_gamedev() {
-	# brew cask install --appdir="/Applications" epic-games
-	# brew cask install --appdir="/Applications" unity
+  echo 'nothing'
+	# brew install --cask epic-games
+	# brew install --cask unity
 }
 
 brew_install_communication() {
-	# brew cask install --appdir="/Applications" discord
-	brew cask install --appdir="/Applications" slack
-	echo 'Installing Slack Dark Theme'
+	# brew install --cask discord
+	brew install --cask slack
+	# echo 'Installing Slack Dark Theme'
 	# curl -s https://raw.githubusercontent.com/caiceA/slack-black-theme/master/blackSlack.sh | bash -s
-	# brew cask install --appdir="/Applications" zoom
-	# brew cask install --appdir="/Applications" chatology
+	# brew install --cask zoom
+	# brew install --cask chatology
 }
 
 brew_install_browsers() {
-	brew cask install --appdir="/Applications" google-chrome
-	brew cask install --appdir="/Applications" google-chrome-canary
-	brew cask install --appdir="/Applications" firefox
+	brew install --cask google-chrome
+	brew install --cask google-chrome-canary
+	brew install --cask firefox
 }
 
 brew_install_media_tools() {
 	brew install ffmpeg
 	brew install imagemagick --with-webp
-	brew cask install --appdir="/Applications" vlc
+	brew install --cask vlc
 	# Metadata anonymization toolkit
 	brew install mat
 }
@@ -203,38 +207,38 @@ brew_install_misc() {
 	brew install ansible
 	brew install apache-zeppelin
 	brew install flow
-	brew cask install --appdir="/Applications" virtualbox
-	brew cask install --appdir="/Applications" docker
-	brew cask install --appdir="/Applications" wifi-explorer
-	brew cask install --appdir="/Applications" hazel
-	brew cask install --appdir="/Applications" textual
-	brew cask install --appdir="/Applications" freecad
-	brew cask install --appdir="/Applications" postman
-	brew cask install --appdir="/Applications" appcleaner
-	brew cask install --appdir="/Applications" geektool
-	brew cask install --appdir="/Applications" atom
-	brew cask install --appdir="/Applications" jetbrains-toolbox
+	brew install --cask virtualbox
+	brew install --cask docker
+	brew install --cask wifi-explorer
+	brew install --cask hazel
+	brew install --cask textual
+	# brew install --cask freecad
+	brew install --cask postman
+	brew install --cask appcleaner
+	brew install --cask geektool
+	brew install --cask atom
+	brew install --cask jetbrains-toolbox
 	brew install git
 	brew install git-lfs
-	brew cask install --appdir="/Applications" gitkraken
-	brew cask install --appdir="/Applications" kdiff3
-	brew cask install --appdir="/Applications" sourcetree
-	brew cask install --appdir="/Applications" kindle
-	brew cask install --appdir="/Applications" spectacle
-	brew cask install --appdir="/Applications" wireshark-chmodbpf
-	brew cask install --appdir="/Applications" beamer
-	brew cask install --appdir="/Applications" libreoffice
-	brew cask install --appdir="/Applications" spotify
-	brew cask install --appdir="/Applications" cakebrew
-	brew cask install --appdir="/Applications" cardhop
-	brew cask install --appdir="/Applications" grammarly
-	brew cask install --appdir="/Applications" mactracker
-	brew cask install --appdir="/Applications" teamviewer
-	brew cask install --appdir="/Applications" charles
-	brew cask install --appdir="/Applications" hex-fiend
-	brew cask install --appdir="/Applications" meld
-	brew cask install --appdir="/Applications" transmission
-	brew cask install --appdir="/Applications" timely
+	brew install --cask gitkraken
+	brew install --cask kdiff3
+	brew install --cask sourcetree
+	# brew install --cask kindle
+	brew install --cask spectacle
+	brew install --cask wireshark-chmodbpf
+	brew install --cask beamer
+	brew install --cask libreoffice
+	brew install --cask spotify
+	brew install --cask cakebrew
+	brew install --cask cardhop
+	brew install --cask grammarly
+	brew install --cask mactracker
+	# brew install --cask teamviewer
+	brew install --cask charles
+	brew install --cask hex-fiend
+	brew install --cask meld
+	# brew install --cask transmission
+	brew install --cask timely
 }
 
 # Deprecated stuff maybe... delete after verifying procedure works as is

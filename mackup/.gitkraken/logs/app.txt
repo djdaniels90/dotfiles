@@ -1,0 +1,23 @@
+[2021-06-08T19:36:26.080Z] Detecting Git and Git LFS: started
+[2021-06-08T19:36:32.356Z] Detected Git: 2.30.1
+[2021-06-08T19:36:32.361Z] Detected Git LFS: 2.13.3
+[2021-06-08T19:36:32.547Z] Open repository /Users/panda/code/amp/pandas4000/: started.
+[2021-06-08T19:36:32.562Z] Set profile setting ["externalEditor"] to "Atom": started.
+[2021-06-08T19:36:32.672Z] Set profile setting ["externalEditor"] to "Atom": finished. gk-log://duration?t=110
+[2021-06-08T19:36:32.683Z] Open repository /Users/panda/code/amp/pandas4000/: failed to resolve path '/Users/panda/code/amp/pandas4000': No such file or directory
+[2021-06-08T19:36:32.689Z] Open repository: finished with errors. gk-log://duration?t=142
+[2021-06-08T19:36:32.691Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd","type":"NEW"},{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd"}: started.
+[2021-06-08T19:36:32.693Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd","type":"NEW"},{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd"}: finished. gk-log://duration?t=2
+[2021-06-08T19:36:34.529Z] Detecting Git and Git LFS: finished gk-log://duration?t=8449
+[2021-06-08T19:36:54.746Z] Send usage data to Axosoft: started.
+[2021-06-08T19:36:54.888Z] Send usage data to Axosoft: unauthorized
+[2021-06-08T19:36:54.893Z] Send usage data to Axosoft: finished with errors. gk-log://duration?t=147
+[2021-06-08T19:39:53.527Z] Open repository /Users/dj.daniels/Documents/code/upstart-web-0/: started.
+[2021-06-08T19:40:00.309Z] Open repository: finished. gk-log://duration?t=6782
+[2021-06-08T19:40:00.593Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd","type":"REPO","repoName":"upstart-web-0","repoPath":"/Users/dj.daniels/Documents/code/upstart-web-0/"},{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd"}: started.
+[2021-06-08T19:40:00.597Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd","type":"REPO","repoName":"upstart-web-0","repoPath":"/Users/dj.daniels/Documents/code/upstart-web-0/"},{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"bb4b6849-f7cd-4506-b5db-4d0993edf0cd"}: finished. gk-log://duration?t=4
+[2021-06-08T19:40:17.861Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"1b400470-f359-45d6-b385-82e21d922266"}: started.
+[2021-06-08T19:40:17.864Z] Set profile setting ["tabInfo"] to {"tabs":[{"id":"1b400470-f359-45d6-b385-82e21d922266","type":"RELEASE_NOTES"}],"selectedTabId":"1b400470-f359-45d6-b385-82e21d922266"}: finished. gk-log://duration?t=3
+[2021-06-09T19:36:54.849Z] Send usage data to Axosoft: started.
+[2021-06-09T19:36:55.323Z] Send usage data to Axosoft: unauthorized
+[2021-06-09T19:36:55.327Z] Send usage data to Axosoft: finished with errors. gk-log://duration?t=477

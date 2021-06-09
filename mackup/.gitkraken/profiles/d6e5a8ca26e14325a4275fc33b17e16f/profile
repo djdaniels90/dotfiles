@@ -1,8 +1,21 @@
 {
   "userEmail": "djdanielsh@gmail.com",
   "userName": "Commando Panda",
-  "lastOpenedRepository": "/Users/panda/code/amp/pandas4000/.git",
   "fileNodeList": {
     "viewMode": "tree_view"
-  }
+  },
+  "gpg": {
+    "commitGpgSign": false,
+    "userSigningKey": "F622411C163BE11A"
+  },
+  "tabInfo": {
+    "tabs": [
+      {
+        "id": "1b400470-f359-45d6-b385-82e21d922266",
+        "type": "RELEASE_NOTES"
+      }
+    ],
+    "selectedTabId": "1b400470-f359-45d6-b385-82e21d922266"
+  },
+  "externalEditor": "Atom"
 }

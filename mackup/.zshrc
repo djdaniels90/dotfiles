@@ -26,9 +26,6 @@ autoload -Uz _zinit
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Add iterm shell intergrations if present
 # TODO: fix this, the iff isn't working right
@@ -54,6 +51,7 @@ zinit snippet OMZP::git
 # `make"install PREFIX=$ZPFX"`, if "install" wouldn't be the only, default target.
 zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
 zinit light tj/git-extras
+source /Users/dj.daniels/.zinit/plugins/tj---git-extras/etc/git-extras-completion.zsh
 
 # source $HOME/.zinit/bin/zinit.zsh
 # autoload -Uz _zinit
@@ -135,7 +133,7 @@ source ~/.functions
 
 zinit light tysonwolker/iterm-tab-colors
 zinit light lukechilds/zsh-better-npm-completion
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # Terminal GIPHY creator cast terminal
 # zinit load asciinema/asciinema.git
@@ -164,8 +162,8 @@ source <(kubectl completion zsh)
 
 export PATH="/usr/local/sbin:$PATH"
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# export PATH="$HOME/.cargo/bin:$PATH"
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 ulimit -n 21504
@@ -175,7 +173,6 @@ ulimit -s 10000
 # trying  to install these unconfirmed
 # export PIPENV_VENV_IN_PROJECT=1
 zinit snippet OMZP::git
-zinit snippet OMZP::npm
 zinit snippet OMZP::brew
 # zinit snippet OMZP::docker
 zinit snippet OMZP::docker-machine
@@ -195,15 +192,12 @@ zstyle ':completion:*' menu select=1
 # zplug "iam4x/zsh-iterm-touchbar"
 
 # zinit light "kiurchv/asdf.plugin.zsh"
-[[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
 # . /usr/local/opt/asdf/asdf.sh
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # if type brew &>/dev/null; then
 #   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 # fi
-
-source /Users/djdaniels/.zinit/plugins/tj---git-extras/etc/git-extras-completion.zsh
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
@@ -219,5 +213,7 @@ setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
 
 setopt promptsubst
-neofetch
 # eval "$(direnv hook zsh)"
+
+[[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
+neofetch
