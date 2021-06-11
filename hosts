@@ -1,0 +1,73 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+# End of section:
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+
+
+192.168.3.5 knowledgedump.lan
+192.168.3.5 cadvisor.knowledgedump.lan
+192.168.3.5 grocy.knowledgedump.lan
+192.168.3.5 qbittorrent.knowledgedump.lan
+192.168.3.5 nextcloud.knowledgedump.lan
+192.168.3.5 transmission.knowledgedump.lan
+192.168.3.5 radarr.knowledgedump.lan
+192.168.3.5 sonarr.knowledgedump.lan
+192.168.3.5 traefik.knowledgedump.lan
+192.168.3.5 droppy.knowledgedump.lan
+192.168.3.5 lazylibrary.knowledgedump.lan
+192.168.3.5 grafana.knowledgedump.lan
+192.168.3.5 calibre.knowledgedump.lan
+192.168.3.5 sabnzbd.knowledgedump.lan
+192.168.3.5 deluge.knowledgedump.lan
+192.168.3.5 jackett.knowledgedump.lan
+192.168.3.5 kibana.knowledgedump.lan
+192.168.3.5 hydra2.knowledgedump.lan
+192.168.3.5 organizr.knowledgedump.lan
+192.168.3.5 traefik.knowledgedump.lan
+192.168.3.5 plex.knowledgedump.lan
+192.168.3.5 tautulli.knowledgedump.lan
+192.168.3.5 netdata.knowledgedump.lan
+192.168.3.5 portainer.knowledgedump.lan
+192.168.3.5 whoami.knowledgedump.lan
+192.168.3.5 openvpn-as.knowledgedump.lan
+192.168.3.5 pihole.knowledgedump.lan
+
+0.0.0.0 localhost
+0.0.0.0 whoami.localhost
+0.0.0.0 cadvisor.localhost
+0.0.0.0 grocy.localhost
+0.0.0.0 qbittorrent.localhost
+0.0.0.0 nextcloud.localhost
+0.0.0.0 transmission.localhost
+0.0.0.0 radarr.localhost
+0.0.0.0 sonarr.localhost
+0.0.0.0 traefik.localhost
+0.0.0.0 droppy.localhost
+0.0.0.0 lazylibrary.localhost
+0.0.0.0 grafana.localhost
+0.0.0.0 calibre.localhost
+0.0.0.0 sabnzbd.localhost
+0.0.0.0 deluge.localhost
+0.0.0.0 jackett.localhost
+0.0.0.0 kibana.localhost
+0.0.0.0 hydra2.localhost
+0.0.0.0 organizr.localhost
+0.0.0.0 traefik.localhost
+0.0.0.0 plex.localhost
+0.0.0.0 tautulli.localhost
+0.0.0.0 netdata.localhost
+0.0.0.0 portainer.localhost
+0.0.0.0 openvpn-as.localhost
+0.0.0.0 pihole.localhost
+
+127.0.0.1	AcronisDriveSearchPlugin
