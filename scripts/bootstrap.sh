@@ -64,6 +64,7 @@ brew_install_font_stuff
 brew install --cask iterm2
 brew install exa
 brew install neofetch
+brew install asdf
 
 ########################################
 # install databases
